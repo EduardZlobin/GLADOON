@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GLADOON</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="noise"></div>
+    <div class="grid"></div>
+    <div class="blobs">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <span class="blob b4"></span>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="stage" id="tilt">
+      <div class="card" id="app">
+        <!-- TOP BAR (активируется при поиске) -->
+        <header class="topbar" id="topbar">
+          <button class="brand" id="brand" type="button" title="На главную">
+            <span class="brandName">GLADOON</span>
+            <span class="brandSig">browser</span>
+          </button>
+
+          <form class="searchbar" id="searchForm" autocomplete="off">
+            <input id="q" spellcheck="false" placeholder="Поиск…" />
+          </form>
+
+          <div class="topActions">
+        <button class="ghost" id="btnHome" type="button">Home</button>
+        <button class="ghost" id="btnClear" type="button">Clear</button>
+        <button class="ghost danger" id="btnClearRecents" type="button">Clear Recents</button>
+      </div>
+        </header>
+
+        <!-- HOME (первый экран) -->
+        <section class="home" id="home">
+          <div class="homeHero">
+            <div class="homeLogo">
+              <div class="homeTitle">GLADOON</div>
+              <div class="homeSub">Лучший браузер от Димки Гладунька
+              </div>
+            </div>
+
+            <form class="homeSearch" id="homeSearchForm" autocomplete="off">
+              <input id="qHome" spellcheck="false" placeholder="Введите запрос и нажмите Enter…" />
+              <button class="btn" type="submit">Search</button>
+            </form>
+
+            <div class="homeMeta">
+              Подсказка: ищет по <code>названию</code>, <code>описанию</code> и <code>тегам</code>. Я кстати Димка Гладун.
+            </div>
+          </div>
+
+          <div class="dock">
+            <div class="dockHead">
+              <div class="dockTitle">Последние посещения</div>
+              <div class="dockHint">кликабельно</div>
+            </div>
+            <div class="dockGrid" id="recentGrid">
+              <!-- заполняется JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="results" id="results" hidden>
+          <div class="resultsHead">
+            <div class="resultsTitle" id="resultsTitle">Результаты</div>
+            <div class="resultsMeta" id="resultsMeta"></div>
+          </div>
+
+          <div class="errbox" id="errbox" hidden>
+            <div class="errTitle">Ничего не найдено</div>
+            <div class="errText" id="errtext"></div>
+          </div>
+
+          <div class="list" id="list">
+            <!-- результаты -->
+          </div>
+        </section>
+
+        <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="sites.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
