@@ -1,6 +1,7 @@
 // sites.js — редактируй список тут.
 // tags НЕ отображаются, но участвуют в поиске.
-console.log("SITES.JS LOADED", window.GLADOON_SITES?.length);
+
+console.log("SITES.JS LOADED");
 
 window.GLADOON_SITES = [
   {
@@ -19,7 +20,7 @@ window.GLADOON_SITES = [
     title: "Личка Эдуарда Злобина",
     description: "Личный аккаунт Эдуарда Злобина",
     url: "https://t.me/eduardzlobifagot",
-    tags: ["Эдик", "пидар", "эдуард", "злобин", "злобак", "педофил", "педик", "горох", "гороховый суп", "вера", "икона", "шизофреник", "больной", "решетников"]
+    tags: ["Эдик", "пидар", "эдуард", "злобин", "приветь", "злобак", "педофил", "педик", "горох", "гороховый суп", "вера", "икона", "шизофреник", "больной", "решетников"]
   },
   {
     title: "Joker Bank",
@@ -70,3 +71,5 @@ window.GLADOON_SITES = [
     tags: ["новости", "news", "пицемания", "pi33emania", "SIGNAL", "сигнал"]
   }
 ];
+
+console.log("SITES COUNT:", window.GLADOON_SITES.length);

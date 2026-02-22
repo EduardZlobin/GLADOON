@@ -223,30 +223,69 @@ function renderRecents(){
     empty.style.cursor = "default";
     empty.innerHTML = `
       <div class="tileTitle">Пусто</div>
-      <div class="tileDesc">Открой любой сайт из результатов — он появится здесь.</div>
+      <div class="tileDesc">Открой любой сайт — он появится здесь.</div>
     `;
     recentGrid.appendChild(empty);
     return;
   }
 
   const frag = document.createDocumentFragment();
-  for (const r of recents){
+
+  recents.forEach((r, index) => {
     const btn = document.createElement("div");
     btn.className = "tile";
+
     btn.innerHTML = `
+      <div class="tileRemove" title="Удалить">×</div>
       <div class="tileTitle">${escapeHtml(r.title)}</div>
       <div class="tileDesc">${escapeHtml(r.description || "")}</div>
     `;
-    btn.addEventListener("click", () => {
-      window.open(r.url, "_blank", "noopener,noreferrer");
+
+    // клик по плитке → открыть
+    btn.addEventListener("click", (e) => {
+      // если нажали на крестик — не открываем
+      if (e.target.classList.contains("tileRemove")) return;
+      window.open(r.url, "_blank");
     });
+
+    // удаление одной записи
+    btn.querySelector(".tileRemove").addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const rec = getRecents();
+      rec.splice(index, 1);
+      setRecents(rec);
+      renderRecents();
+    });
+
     frag.appendChild(btn);
-  }
+  });
+
   recentGrid.appendChild(frag);
 }
 
 // ------------------------- events -------------------------
 function doSearch(query){
+  const special = document.getElementById("special");
+special.innerHTML = "";
+special.hidden = true;
+
+const qn = normalize(query);
+
+// --- ПАСХАЛКА КОЛБАСКА ---
+if (qn === "колбаска"){
+  showResults();
+
+  special.innerHTML = `
+    <img src="https://brestmeat.by/upload/resize_cache/webp/iblock/887/jq1k6kcbo3ofrky3f4cgx2xlhuiufrlj.webp">
+  `;
+  special.hidden = false;
+
+  list.innerHTML = "";
+  hideError();
+  resultsMeta.textContent = "найдена колбаска";
+  return;
+}
   showResults();
   q.value = query; // синхронизируем верхнюю строку
 

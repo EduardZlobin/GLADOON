@@ -372,3 +372,43 @@ body{
 .ghost.danger:hover{
   border-color: rgba(255,95,214,.45);
 }
+.tile{
+  position: relative;
+}
+
+.tileRemove{
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.35);
+  color: rgba(233,236,255,.9);
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  opacity: .75;
+  transition: .15s;
+}
+
+.tileRemove:hover{
+  opacity: 1;
+  border-color: rgba(255,95,214,.6);
+  background: rgba(255,95,214,.18);
+}
+
+.special{
+  display:flex;
+  justify-content:center;
+  padding: 20px;
+}
+
+.special img{
+  max-width: 420px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}

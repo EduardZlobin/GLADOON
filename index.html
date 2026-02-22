@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <div class="bg" aria-hidden="true">
     <div class="noise"></div>
     <div class="grid"></div>
@@ -26,7 +27,8 @@
   <main class="wrap">
     <section class="stage" id="tilt">
       <div class="card" id="app">
-        <!-- TOP BAR (активируется при поиске) -->
+
+        <!-- TOP BAR -->
         <header class="topbar" id="topbar">
           <button class="brand" id="brand" type="button" title="На главную">
             <span class="brandName">GLADOON</span>
@@ -38,18 +40,19 @@
           </form>
 
           <div class="topActions">
-        <button class="ghost" id="btnHome" type="button">Home</button>
-        <button class="ghost" id="btnClear" type="button">Clear</button>
-        <button class="ghost danger" id="btnClearRecents" type="button">Clear Recents</button>
-      </div>
+            <button class="ghost" id="btnHome" type="button">Home</button>
+            <button class="ghost" id="btnClear" type="button">Clear</button>
+            <button class="ghost danger" id="btnClearRecents" type="button">Clear Recents</button>
+          </div>
         </header>
 
-        <!-- HOME (первый экран) -->
+        <!-- HOME -->
         <section class="home" id="home">
           <div class="homeHero">
             <div class="homeLogo">
               <div class="homeTitle">GLADOON</div>
-              <div class="homeSub">Лучший браузер от Димки Гладунька
+              <div class="homeSub">
+                Лучший браузер от Димки Гладунька
               </div>
             </div>
 
@@ -59,7 +62,7 @@
             </form>
 
             <div class="homeMeta">
-              Подсказка: ищет по <code>названию</code>, <code>описанию</code> и <code>тегам</code>. Я кстати Димка Гладун.
+              Подсказка: ищет по <code>названию</code>, <code>описанию</code> и <code>тегам</code>.
             </div>
           </div>
 
@@ -69,17 +72,21 @@
               <div class="dockHint">кликабельно</div>
             </div>
             <div class="dockGrid" id="recentGrid">
-              <!-- заполняется JS -->
+              <!-- JS заполнит -->
             </div>
           </div>
         </section>
 
         <!-- RESULTS -->
         <section class="results" id="results" hidden>
+
           <div class="resultsHead">
             <div class="resultsTitle" id="resultsTitle">Результаты</div>
             <div class="resultsMeta" id="resultsMeta"></div>
           </div>
+
+          <!-- СПЕЦ-БЛОК ДЛЯ ПАСХАЛОК -->
+          <div id="special" class="special" hidden></div>
 
           <div class="errbox" id="errbox" hidden>
             <div class="errTitle">Ничего не найдено</div>
@@ -87,16 +94,21 @@
           </div>
 
           <div class="list" id="list">
-            <!-- результаты -->
+            <!-- сюда выводятся сайты -->
           </div>
+
         </section>
 
         <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+
       </div>
     </section>
   </main>
 
+  <!-- ВАЖНО: сначала sites.js -->
   <script src="sites.js"></script>
+  <!-- потом логика -->
   <script src="app.js" defer></script>
+
 </body>
 </html>
