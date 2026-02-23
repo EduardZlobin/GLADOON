@@ -3,7 +3,7 @@
 
 console.log("SITES.JS LOADED");
 
-window.GLADOON_SITES = [
+window.SITES_DATA = [
   {
     title: "Bunker 644",
     description: "Приобретите бункер как можно быстрее, так как надвигатеся гороховая катастрофа",
@@ -50,7 +50,7 @@ window.GLADOON_SITES = [
     title: "Википедия",
     description: "На ВикипедикЯ вы можете писать статьи на любые темы: от науки и технологий до искусства, культуры, философ...",
     url: "https://wikipedika.webnode.page",
-    tags: ["википедия", "википедикя", "Wikipedika", "ренат", "светлоликий", "вера", "религия", "пицца", "пица", "писся", "пися", "обучение"]
+    tags: ["википедия", "википедикя", "Wikipedika", "ренат", "светлоликий", "вера", "религия", "пицца", "пица", "писся", "пися", "обучение", "Дробление пакетов"]
   },
   {
     title: "Он вам не Байден",
@@ -65,6 +65,12 @@ window.GLADOON_SITES = [
     tags: ["ютубеб", "ютуб", "DIMKA", "WOT"]
   },
   {
+    title: "ClubID",
+    description: "Создайте свой аккаунт на ClubID",
+    url: "https://www.youtube.com",
+    tags: ["Клуб", "айди", "аккаунт", "регистрация"]
+  },
+  {
     title: "THELASTSIGNAL",
     description: "Срочные новости...",
     url: "https://eduardzlobin.github.io/THELASTSIGNAL/",
@@ -72,4 +78,4 @@ window.GLADOON_SITES = [
   }
 ];
 
-console.log("SITES COUNT:", window.GLADOON_SITES.length);
+console.log("SITES COUNT:", window.SITES_DATA.length);

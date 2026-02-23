@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GLADOON</title>
+  <title>SKIBIDINET</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body data-app="gladoon">
+<body class="theme-skib" data-app="skibidinet">
   <div class="bg" aria-hidden="true">
     <div class="noise"></div>
     <div class="grid"></div>
@@ -23,15 +23,14 @@
     </div>
   </div>
 
-  <!-- TOP BAR -->
   <header class="topbarFixed" id="topbar">
     <button class="brand" id="brand" type="button" title="На главную">
-      <span class="brandName">GLADOON</span>
+      <span class="brandName">SKIBIDINET</span>
       <span class="brandSig">browser</span>
     </button>
 
     <form class="searchbar" id="searchForm" autocomplete="off">
-      <input id="q" spellcheck="false" placeholder="Поиск…" />
+      <input id="q" spellcheck="false" placeholder="Поиск в SKIBIDINET…" />
     </form>
 
     <div class="topActions">
@@ -44,13 +43,11 @@
   <main class="desktop">
     <section class="stage" id="tilt">
       <div class="card" id="app">
-
-        <!-- HOME -->
         <section class="home" id="home">
           <div class="homeHero">
             <div class="homeLogo">
-              <div class="homeTitle">GLADOON</div>
-              <div class="homeSub">Обычный браузер. Почти.</div>
+              <div class="homeTitle">SKIBIDINET</div>
+              <div class="homeSub">Тут просто интернет — недостаточно.</div>
             </div>
 
             <form class="homeSearch" id="homeSearchForm" autocomplete="off">
@@ -59,7 +56,7 @@
             </form>
 
             <div class="homeMeta">
-              Поиск работает только при подключении к Интернету (правый нижний угол).
+              Нужно: Интернет + “Дробление пакетов”.
             </div>
           </div>
 
@@ -72,32 +69,11 @@
           </div>
         </section>
 
-        <!-- RESULTS -->
         <section class="results" id="results" hidden>
           <div class="resultsHead">
             <div class="resultsTitle" id="resultsTitle">Результаты</div>
             <div class="resultsMeta" id="resultsMeta"></div>
           </div>
-
-                      <!-- OFFLINE GAME -->
-<div id="offlineGame" class="offlineGame" hidden>
-  <div class="offlineHead">
-    <div class="offlineTitle">Нет подключения к Интернету</div>
-    <div class="offlineHint">Пробел / ↑ — прыжок • R — рестарт</div>
-  </div>
-
-  <canvas id="dinoCanvas" width="900" height="220"></canvas>
-
-<div id="wifiUnlock" class="wifiUnlock" hidden>
-  Кажись тебе скучно без интернета, держи пароль от WIFI-Pi33MANIA:
-  <code>6Cf8Vg2Bh1Nj7Mk9</code>
-</div>
-
-  <div class="offlineFooter">
-    <div id="dinoScore" class="offlineScore">Score: 0 • Best: 0</div>
-    <button id="btnDinoRestart" class="ghost" type="button">Restart</button>
-  </div>
-</div>
 
           <div id="special" class="special" hidden></div>
 
@@ -114,14 +90,13 @@
     </section>
   </main>
 
-  <!-- TASKBAR -->
   <footer class="taskbar" id="taskbar">
     <div class="tbLeft">
-      <div class="tbApp">GLADOON</div>
+      <div class="tbApp">SKIBIDINET</div>
     </div>
 
     <div class="tbRight">
-      <button class="tbIcon" id="tbPackets" type="button" hidden title="Дробление пакетов">
+      <button class="tbIcon" id="tbPackets" type="button" title="Дробление пакетов">
         <span class="tbGlyph">▦</span>
         <span class="tbText">Дробление пакетов</span>
       </button>
@@ -147,7 +122,7 @@
           <input id="netManual" spellcheck="false" placeholder="Ввести код…" />
           <button class="mini" id="netManualBtn" type="button">Ввести</button>
         </div>
-        <div class="tiny" id="netManualHint">Подсказка: код — это не пароль.</div>
+        <div class="tiny" id="netManualHint">SKIBIDINET любит “коды”, но пароль нужен в другом месте.</div>
       </div>
 
       <div class="panelBlock">
@@ -165,7 +140,7 @@
   </section>
 
   <!-- WIFI PASSWORD MODAL -->
-  <section class="flyout" id="wifiModal" hidden>
+  <<section class="flyout" id="wifiModal" hidden>
   <div class="flyCard">
     <div class="flyHead">
       <div class="flyTitle">WIFI-Pi33EMANIA</div>
@@ -184,9 +159,31 @@
       <div class="tiny" id="wifiMsg"></div>
     </div>
   </div>
-  </section>
+</section>
 
-  <script src="sites.js"></script>
+  <!-- PACKETS MODAL -->
+  <section class="flyout" id="pktModal" hidden>
+  <div class="flyCard">
+    <div class="flyHead">
+      <div class="flyTitle">Дробление пакетов</div>
+      <button class="xbtn" id="pktClose" type="button">×</button>
+    </div>
+
+    <div class="flyBody">
+      <div class="label">Ключ доступа:</div>
+      <input id="pktPass" type="password" placeholder="Введите пароль…" />
+
+      <div class="row">
+        <button class="btn" id="pktEnable" type="button">Включить</button>
+        <button class="ghost" id="pktCancel" type="button">Отмена</button>
+      </div>
+
+      <div class="tiny" id="pktMsg"></div>
+    </div>
+  </div>
+</section>
+
+  <script src="skibidinet.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
