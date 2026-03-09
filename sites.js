@@ -85,8 +85,8 @@ window.SITES_DATA = [
     {
     title: "RadioGladoon",
     description: "Всё что заприщено везде, доступно тут",
-    url: "https://renat25sad-cpu.github.io/prank/",
-    tags: ["Radio", "Gladoon", "Гладун", "музыка", "трансляция"]
+    url: "https://eduardzlobin.github.io/RadioGladoon/",
+    tags: ["Radio", "Gladoon", "Гладун", "музыка", "трансляция", "радио"]
   },
   {
     title: "THELASTSIGNAL",
