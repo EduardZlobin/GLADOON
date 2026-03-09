@@ -82,9 +82,9 @@ window.SITES_DATA = [
     url: "https://renat25sad-cpu.github.io/prank/",
     tags: ["порно", "прон", "читы", "взлом", "админ", "пиратство", "18+", "+18", "porn", "pron", "моды", "майнкрафт"]
   },
-    {
+  {
     title: "RadioGladoon",
-    description: "Всё что заприщено везде, доступно тут",
+    description: "лучшее радио в мире",
     url: "https://eduardzlobin.github.io/RadioGladoon/",
     tags: ["Radio", "Gladoon", "Гладун", "музыка", "трансляция", "радио"]
   },
@@ -98,6 +98,7 @@ window.SITES_DATA = [
 
 
 console.log("SITES COUNT:", window.SITES_DATA.length);
+
 
 
 
