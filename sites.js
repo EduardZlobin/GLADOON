@@ -48,8 +48,8 @@ window.SITES_DATA = [
   },
   {
     title: "Википедия",
-    description: "На ВикипедикЯ вы можете писать статьи на любые темы: от науки и технологий до искусства, культуры, философ...",
-    url: "https://wikipedika.webnode.page",
+    description: "На Википедия вы можете писать статьи на любые темы: от науки и технологий до искусства, культуры, философ...",
+    url: "https://eduardzlobin.github.io/wikibyedik/#/",
     tags: ["википедия", "википедикя", "Wikipedika", "ренат", "светлоликий", "вера", "религия", "пицца", "пица", "писся", "пися", "обучение", "Дробление пакетов"]
   },
   {
@@ -71,11 +71,34 @@ window.SITES_DATA = [
     tags: ["Клуб", "айди", "аккаунт", "регистрация"]
   },
   {
+    title: "Котелок Злобина | Огонёк",
+    description: "Спасите мир от гибели",
+    url: "https://eduardzlobin.github.io/Apocalypse/",
+    tags: ["Эдик", "пидар", "эдуард", "злобин", "приветь", "злобак", "педофил", "педик", "горох", "гороховый суп", "Котёл", "Огонь", "Огонёк", "Конец света", "огонек", "таймер"]
+  },
+  {
+    title: "То самое что вы ищите",
+    description: "Всё что заприщено везде, доступно тут",
+    url: "https://renat25sad-cpu.github.io/prank/",
+    tags: ["порно", "прон", "читы", "взлом", "админ", "пиратство", "18+", "+18", "porn", "pron", "моды", "майнкрафт"]
+  },
+    {
+    title: "RadioGladoon",
+    description: "Всё что заприщено везде, доступно тут",
+    url: "https://renat25sad-cpu.github.io/prank/",
+    tags: ["Radio", "Gladoon", "Гладун", "музыка", "трансляция"]
+  },
+  {
     title: "THELASTSIGNAL",
     description: "Срочные новости...",
-    url: "https://eduardzlobin.github.io/THELASTSIGNAL/",
-    tags: ["новости", "news", "пицемания", "pi33emania", "SIGNAL", "сигнал"]
+    url: "https://eduardzlobin.github.io/THELASTSIGNALB/",
+    tags: ["новости", "news", "пицемания", "pi33emania", "SIGNAL", "сигнал", "снн", "CNN"]
   }
 ];
 
+
 console.log("SITES COUNT:", window.SITES_DATA.length);
+
+
+
+
