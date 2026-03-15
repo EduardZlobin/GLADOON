@@ -266,15 +266,21 @@ body{
   .dockGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .tile{
-  display:flex;
-  flex-direction:column;
-  gap: 6px;
-  padding: 12px;
-  border-radius: 16px;
+  position: relative;
+  padding: 16px 10px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
+  background: rgba(255,255,255,.05);
   cursor:pointer;
-  text-align:left;
+  font-size: 13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 28px;
+}
+
+.tileDesc{
+  display:none;
 }
 .tile:hover{ border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06); }
 .tileTitle{ font-weight:800; color: rgba(233,236,255,.92); }
@@ -898,3 +904,408 @@ body.theme-skib .blobs .blob{
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
 }
+
+.suggestBox{
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.suggestLink{
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.extWindow{
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  width: 260px;
+  background: rgba(20,20,30,.95);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 14px;
+  padding: 10px;
+  z-index: 999;
+}
+
+.extHead{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+
+.extItem{
+  padding:8px;
+  border-radius:10px;
+  margin-bottom:6px;
+  background:rgba(255,255,255,.05);
+}
+
+.extItem button{
+  float:right;
+}
+
+.theme-dark{
+  --bg:#000;
+  --text:#fff;
+  background:#000 !important;
+}
+
+.ext-compact .item{
+  padding:6px;
+  font-size:13px;
+}
+
+/* ===== COMPACT MODE ===== */
+
+body.ext-compact .topbarFixed{
+  padding: 6px 10px;
+}
+
+body.ext-compact .searchbar input{
+  height: 32px;
+  font-size: 13px;
+}
+
+body.ext-compact .homeTitle{
+  font-size: 26px;
+}
+
+body.ext-compact .item{
+  padding: 8px 10px;
+}
+
+body.ext-compact .itemTitle{
+  font-size: 14px;
+}
+
+body.ext-compact .itemDesc{
+  font-size: 12px;
+}
+
+body.ext-compact .dockGrid{
+  gap: 6px;
+}
+
+body.ext-compact .tile{
+  min-height: 50px;
+  padding: 8px 6px;
+}
+
+body.ext-compact .taskbar{
+  height: 44px;
+}
+
+body.ext-compact .tbIcon{
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+/* ===== Extensions window polish ===== */
+
+.extWindow{
+  position: fixed;
+  bottom: 72px;
+  right: 16px;
+  width: 320px;
+  padding: 12px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(16,18,26,.78);
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  z-index: 9999;
+}
+
+.extHead{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 6px 6px 10px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+#extClose{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: inherit;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+#extClose:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.20);
+}
+#extClose:active{
+  transform: translateY(0px) scale(.98);
+}
+
+.extList{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* каждая строка расширения */
+.extItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 10px 10px 12px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.03)
+  );
+
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.extItem:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.18);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.04)
+  );
+}
+
+/* название расширения */
+.extItem .extName{
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* кнопка включить/выключить — как тумблер */
+.extItem button{
+  min-width: 62px;
+  height: 30px;
+  padding: 0 12px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: inherit;
+  cursor: pointer;
+
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .2px;
+
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
+}
+
+.extItem button:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+}
+
+.extItem button:active{
+  transform: translateY(0px) scale(.98);
+}
+
+/* "Вкл" подсветим */
+.extItem button[data-state="on"]{
+  background: linear-gradient(180deg, rgba(120,120,255,.28), rgba(120,120,255,.14));
+  border-color: rgba(140,140,255,.35);
+  filter: drop-shadow(0 6px 18px rgba(110,110,255,.25));
+}
+
+/* "Выкл" чуть тусклее */
+.extItem button[data-state="off"]{
+  opacity: .9;
+}
+
+/* ===== COMPACT MODE (dense + clean) ===== */
+
+body.ext-compact{
+  /* чуть меньше “желе” */
+  --compact-radius: 14px;
+  --compact-gap: 8px;
+}
+
+/* Верхняя панель */
+body.ext-compact .topbarFixed{
+  padding: 8px 12px;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Лого и подпись */
+body.ext-compact .brandName{ font-size: 16px; }
+body.ext-compact .brandSig{ font-size: 11px; opacity: .8; }
+
+/* Поиск */
+body.ext-compact .searchbar{
+  max-width: 520px;
+}
+body.ext-compact .searchbar input{
+  height: 34px;
+  font-size: 13px;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+/* Кнопки сверху */
+body.ext-compact .topActions{
+  gap: 8px;
+}
+body.ext-compact .topActions .ghost{
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+/* Центральная карточка/контейнер — меньше воздуха */
+body.ext-compact .card{
+  border-radius: 18px;
+}
+
+/* HOME */
+body.ext-compact .homeHero{
+  padding: 18px 18px 14px;
+  gap: 10px;
+}
+body.ext-compact .homeTitle{
+  font-size: 30px;
+  letter-spacing: .4px;
+}
+body.ext-compact .homeSub{
+  font-size: 13px;
+  opacity: .85;
+}
+
+/* Поиск на главной */
+body.ext-compact .homeSearch{
+  gap: 8px;
+}
+body.ext-compact .homeSearch input{
+  height: 38px;
+  font-size: 13px;
+  border-radius: 14px;
+  padding: 0 14px;
+}
+body.ext-compact .homeSearch .btn{
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+/* Dock (последние посещения) */
+body.ext-compact .dock{
+  margin-top: 10px;
+}
+body.ext-compact .dockHead{
+  padding: 10px 14px 8px;
+}
+body.ext-compact .dockTitle{ font-size: 13px; }
+body.ext-compact .dockHint{ font-size: 11px; opacity: .7; }
+
+body.ext-compact .dockGrid{
+  padding: 10px 14px 14px;
+  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+}
+
+/* Плитки — компактные, но “премиум” */
+body.ext-compact .tile{
+  min-height: 56px;
+  padding: 10px 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+}
+body.ext-compact .tile:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Название в плитке — по центру и аккуратно */
+body.ext-compact .tileTitle{
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.15;
+}
+
+/* Крестик меньше и не орёт */
+body.ext-compact .tileRemove{
+  width: 18px;
+  height: 18px;
+  border-radius: 8px;
+  opacity: .7;
+}
+body.ext-compact .tileRemove:hover{ opacity: 1; }
+
+/* RESULTS */
+body.ext-compact .resultsHead{
+  padding: 12px 16px 10px;
+}
+body.ext-compact .resultsTitle{ font-size: 14px; }
+body.ext-compact .resultsMeta{ font-size: 12px; opacity: .75; }
+
+body.ext-compact .list{
+  padding: 0 14px 14px;
+  gap: 8px;
+}
+
+/* Результаты — плотнее, но читабельнее */
+body.ext-compact .item{
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+}
+body.ext-compact .itemTitle{
+  font-size: 14px;
+  font-weight: 800;
+}
+body.ext-compact .itemUrl{
+  font-size: 11px;
+  opacity: .75;
+}
+body.ext-compact .itemDesc{
+  font-size: 12px;
+  opacity: .85;
+}
+
+/* Ошибки/спец блоки */
+body.ext-compact .errbox{
+  margin: 10px 14px 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+/* Панель задач */
+body.ext-compact .taskbar{
+  height: 46px;
+  padding: 0 10px;
+}
+body.ext-compact .tbIcon{
+  padding: 6px 8px;
+  border-radius: 14px;
+}
+body.ext-compact .tbText{ font-size: 12px; }
+body.ext-compact .tbGlyph{ font-size: 13px; }

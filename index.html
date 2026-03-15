@@ -37,6 +37,7 @@
     <div class="topActions">
       <button class="ghost" id="btnHome" type="button">Home</button>
       <button class="ghost" id="btnClear" type="button">Clear</button>
+      <button class="ghost" id="btnHistory" type="button" hidden>History</button>
       <button class="ghost danger" id="btnClearRecents" type="button">Clear Recents</button>
     </div>
   </header>
@@ -50,7 +51,7 @@
           <div class="homeHero">
             <div class="homeLogo">
               <div class="homeTitle">GLADOON</div>
-              <div class="homeSub">Обычный браузер. Почти.</div>
+              <div class="homeSub">Самый быстрый браузер.</div>
             </div>
 
             <form class="homeSearch" id="homeSearchForm" autocomplete="off">
@@ -59,14 +60,14 @@
             </form>
 
             <div class="homeMeta">
-              Поиск работает только при подключении к Интернету (правый нижний угол).
+              Браузер корректно работаель при включённом интернете
             </div>
           </div>
 
           <div class="dock">
             <div class="dockHead">
               <div class="dockTitle">Последние посещения</div>
-              <div class="dockHint">кликабельно</div>
+              <div class="dockHint">Динамично</div>
             </div>
             <div class="dockGrid" id="recentGrid"></div>
           </div>
@@ -125,6 +126,11 @@
         <span class="tbGlyph">▦</span>
         <span class="tbText">Дробление пакетов</span>
       </button>
+
+<button class="tbIcon" id="btnExt" type="button" title="Расширения">
+  <span class="tbGlyph">🧩</span>
+  <span class="tbText">Расширения</span>
+</button>
 
       <button class="tbIcon" id="tbNet" type="button" title="Интернет">
         <span class="tbGlyph">⟠</span>
@@ -187,6 +193,16 @@
   </section>
 
   <script src="sites.js"></script>
+  <script src="advertising.js"></script>
   <script src="app.js" defer></script>
+
+  <div id="extWindow" class="extWindow" hidden>
+  <div class="extHead">
+    Расширения
+    <button id="extClose">✕</button>
+  </div>
+
+  <div class="extList" id="extList"></div>
+</div>
 </body>
 </html>
